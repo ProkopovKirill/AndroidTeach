@@ -4,11 +4,19 @@
 
     <application
         android:allowBackup="true"
+<<<<<<< HEAD
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+=======
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MyActivity"
+>>>>>>> 78ea22d6947efbdcd84b220f3301e26ca795821d
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,10 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2" >
         </activity>
+=======
+>>>>>>> 78ea22d6947efbdcd84b220f3301e26ca795821d
     </application>
 
 </manifest>
