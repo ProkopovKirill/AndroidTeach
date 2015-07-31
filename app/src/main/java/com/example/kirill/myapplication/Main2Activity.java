@@ -1,37 +1,57 @@
 package com.example.kirill.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.util.Log;
+import android.widget.Toast;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity  {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main2, menu);
-        return true;
-    }
+    String[] stMas={"dfdf","fdfd"};
+   final String LOG_TAG = "myLogs";
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+  ListView lvMain;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+  /** Called when the activity is first created. */
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main2);
+
+    lvMain = (ListView) findViewById(R.id.lvMain);
+
+   // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+   //     this, R.array.names, android.R.layout.simple_list_item_1);
+
+      MyAdapter adapter=new MyAdapter(this,stMas);
+    lvMain.setAdapter(adapter);
+
+ /*   lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        public void onItemClick(AdapterView<?> parent, View view,
+                                int position, long id) {
+            Log.d(LOG_TAG, "itemClick: position = " + position + ", id = "
+                    + id);
+        }
+    });
+
+      lvMain.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int position, long id) {
+            Log.d(LOG_TAG, "itemSelect: position = " + position + ", id = "
+                    + id);
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+        public void onNothingSelected(AdapterView<?> parent) {
+            Log.d(LOG_TAG, "itemSelect: nothing");
+      }
+    });*/
+
+  }
 }
