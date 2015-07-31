@@ -1,3 +1,0 @@
-# AndroidTeach
-My Repository/////
-rerrr
